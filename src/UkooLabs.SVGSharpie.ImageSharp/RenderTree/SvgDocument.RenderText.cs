@@ -43,7 +43,7 @@ namespace UkooLabs.SVGSharpie.ImageSharp.Dom
                 }
             }
 
-            if (family == null)
+            if (ReferenceEquals(family, null)) //FontFamily overrides == operator and can't handle 'null' value on the left.
             {
                 family = fonts.Find(DefaultFont);
             }
